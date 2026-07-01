@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havlik Tamás — CV</title>
+<style>
+  :root{
+    --dark:#2b2b2b;
+    --dark2:#333;
+    --accent:#f5b21d;
+    --text:#444;
+    --muted:#777;
+    --line:#e2e2e2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI',Arial,Helvetica,sans-serif;
+    background:#888;color:var(--text);
+    display:flex;justify-content:center;padding:24px;
+  }
+  .page{
+    width:794px;min-height:1123px;background:#fff;
+    display:grid;grid-template-columns:300px 1fr;
+    position:relative;overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,.3);
+  }
+  /* corner triangles */
+  .page::before{
+    content:"";position:absolute;top:0;left:0;
+    border-top:80px solid var(--accent);
+    border-right:80px solid transparent;z-index:3;
+  }
+  .page::after{
+    content:"";position:absolute;bottom:0;right:0;
+    border-bottom:80px solid var(--accent);
+    border-left:80px solid transparent;z-index:3;
+  }
+
+  /* ---------------- SIDEBAR ---------------- */
+  .sidebar{
+    background:var(--dark);color:#cfcfcf;
+    padding:0 28px 40px;position:relative;
+  }
+  .photo-wrap{
+    display:flex;justify-content:center;margin:48px 0 30px;
+  }
+  .photo-frame{
+    width:182px;height:182px;background:var(--accent);
+    border-radius:50% 50% 50% 0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .photo{
+    width:166px;height:166px;
+    border-radius:50% 50% 50% 0;
+    border:3px solid var(--dark);box-sizing:border-box;
+    object-fit:cover;background:#555;
+  }
+  .side-block{margin-bottom:34px;}
+  .side-head{
+    display:flex;align-items:center;gap:10px;
+    color:#fff;font-size:16px;font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;
+  }
+  .side-head .ic{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--accent);color:var(--dark);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;flex-shrink:0;
+  }
+  .contact-item{display:flex;gap:10px;font-size:12px;margin-bottom:12px;line-height:1.5;word-break:break-word;}
+  .contact-item .dot{color:var(--accent);font-size:13px;}
+  .ref-item{margin-bottom:16px;font-size:12px;line-height:1.6;}
+  .ref-item strong{color:#fff;display:block;font-size:13px;letter-spacing:.5px;}
+  .edu-item{margin-bottom:16px;font-size:12px;line-height:1.5;}
+  .edu-item strong{color:#fff;display:block;text-transform:uppercase;font-size:12.5px;letter-spacing:.5px;}
+  .edu-item span{color:var(--accent);font-size:11px;}
+  .dashed{border:0;border-top:1px dashed #5a5a5a;margin:18px 0;}
+
+  /* ---------------- MAIN ---------------- */
+  .main{padding:26px 36px 20px;}
+  .name{
+    font-size:34px;font-weight:800;color:var(--dark);
+    text-transform:uppercase;letter-spacing:1px;line-height:1.1;
+  }
+  .name b{color:var(--accent);}
+  .role{
+    color:var(--muted);text-transform:uppercase;
+    letter-spacing:3px;font-size:13px;margin:5px 0 16px;
+  }
+  .main-head{
+    display:flex;align-items:center;gap:12px;
+    font-size:18px;font-weight:800;color:var(--dark);
+    text-transform:uppercase;letter-spacing:1px;
+    margin:9px 0 6px;
+  }
+  .main-head .ic{
+    width:30px;height:30px;border-radius:50%;
+    background:var(--accent);color:var(--dark);
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;
+  }
+  .about{font-size:12.5px;line-height:1.5;color:var(--text);text-align:justify;}
+
+  .job{position:relative;padding-left:18px;margin-bottom:7px;}
+  .job::before{
+    content:"";position:absolute;left:0;top:5px;
+    width:8px;height:8px;border-radius:50%;background:var(--accent);
+  }
+  .job-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .job-title{font-size:14px;font-weight:700;color:var(--dark);text-transform:uppercase;}
+  .job-title b{color:var(--accent);}
+  .job-date{font-size:12px;color:var(--muted);white-space:nowrap;}
+  .job-sub{font-style:italic;font-size:12.5px;color:var(--muted);margin:2px 0 6px;}
+  .job-desc{font-size:12px;line-height:1.45;color:var(--text);}
+
+  .awards{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin:0;}
+  .award{position:relative;padding-left:16px;font-size:11.5px;line-height:1.35;color:var(--text);}
+  .award::before{content:"";position:absolute;left:0;top:5px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  .award strong{display:block;color:var(--dark);font-size:12px;line-height:1.25;}
+  .award span{color:var(--muted);}
+
+  .principle{font-size:12px;line-height:1.5;color:var(--text);margin-bottom:7px;}
+  .principle b{color:var(--dark);}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+  .chip{font-size:11px;padding:3px 10px;border-radius:14px;background:#f3f3f3;color:var(--dark);border:1px solid var(--line);white-space:nowrap;}
+  .chip.key{background:var(--accent);border-color:var(--accent);color:var(--dark);font-weight:700;}
+
+  @page{size:A4;margin:0;}
+  html,body{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @media print{
+    body{background:#fff;padding:0;margin:0;}
+    .page{box-shadow:none;width:794px;min-height:1123px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+    <div class="photo-wrap">
+      <div class="photo-frame">
+        <img class="photo" src="./media/profile.png" alt="Havlik Tamás">
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-head"><span class="ic">✆</span> Contact Me</div>
+      <div class="contact-item"><span class="dot">▸</span> +36-30-859-3093</div>
+      <div class="contact-item"><span class="dot">▸</span> havliktomi@hotmail.com</div>
+      <div class="contact-item"><span class="dot">▸</span> linkedin.com/in/tamás-havlik</div>
+      <div class="contact-item"><span class="dot">▸</span> 1082 Budapest, Vajdahunyad street 56.</div>
+    </div>
+
+    <hr class="dashed">
+
+    <div class="side-block">
+      <div class="side-head"><span class="ic">★</span> Languages</div>
+      <div class="ref-item"><strong>Hungarian</strong>Mother tongue</div>
+      <div class="ref-item"><strong>English</strong>Intermediate (ECL)</div>
+      <div class="ref-item"><strong>German</strong>Beginner</div>
+    </div>
+
+    <hr class="dashed">
+
+    <div class="side-block">
+      <div class="side-head"><span class="ic">🎓</span> Education</div>
+      <div class="edu-item">
+        <strong>BME — Budapest</strong>
+        Mechatronics, Intelligent Embedded Systems — MSc
+        <span>2015 – 2017</span>
+      </div>
+      <div class="edu-item">
+        <strong>BME — Budapest</strong>
+        Mechanical Eng., Modeling — BSc, Excellent
+        <span>2011 – 2015</span>
+      </div>
+      <div class="edu-item">
+        <strong>Zrínyi Miklós Grammar School</strong>
+        Advanced Maths &amp; Physics — Zalaegerszeg
+        <span>2005 – 2011</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main">
+    <div class="name">HAVLIK <b>TAMÁS</b></div>
+    <div class="role">CTO · AI Automation Engineer</div>
+
+    <div class="main-head"><span class="ic">i</span> About Me</div>
+    <p class="about">
+      Mechatronics engineer (MSc) and co-founder / CTO of DiabTrend. Language-agnostic
+      builder focused on AI-driven full automation — from deep learning to full-stack and
+      high-performance computing (C++, CUDA, OpenCL). Multiple-time programming &amp; ML
+      competition winner.
+    </p>
+
+    <div class="main-head"><span class="ic">🏆</span> Awards &amp; Competitions</div>
+    <div class="awards">
+      <div class="award"><strong>Ericsson C++ Challenge — 1st</strong><span>Hungary, 2014</span></div>
+      <div class="award"><strong>Telekom Data Hackathon — award</strong><span>Data science, 2016</span></div>
+      <div class="award"><strong>Numer.ai International ML — 8th</strong><span>DNN competition, 2016 Feb.</span></div>
+      <div class="award"><strong>Numer.ai International ML — 10th</strong><span>DNN competition, 2016 Jan.</span></div>
+      <div class="award"><strong>“From Idea to Business” — winner</strong><span>DiabTrend, 2015</span></div>
+      <div class="award"><strong>BME Mathematics — II. award</strong><span>5th overall, 2015</span></div>
+      <div class="award"><strong>Hajós György Math — 1st team</strong><span>8th individual, 2013</span></div>
+      <div class="award"><strong>National OKTV finals</strong><span>Physics 12th/19th; Informatics 14th/28th</span></div>
+      <div class="award"><strong>Izsák Imre Science — 1st &amp; 3rd</strong><span>2011 / 2010</span></div>
+      <div class="award"><strong>BME TDK &amp; Physics awards</strong><span>Honorable mention; II. award</span></div>
+    </div>
+
+    <div class="main-head"><span class="ic">≡</span> Job Experience</div>
+
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">TODOforAI — <b>AI Orchestrator</b></div>
+        <div class="job-date">2025 – Present</div>
+      </div>
+      <div class="job-sub">todofor.ai</div>
+      <div class="job-desc">Building an AI orchestration platform — agentic workflows for full end-to-end automation.</div>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">DiabTrend — <b>CTO</b></div>
+        <div class="job-date">2018 – Present</div>
+      </div>
+      <div class="job-sub">DiabTrend AI Analytics Kft.</div>
+      <div class="job-desc">CTO / co-founder, working alongside Marcell Havlik (CEO). Led product & engineering and supported early-stage / pre-seed investment processes.</div>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title"><b>Experienced Developer</b></div>
+        <div class="job-date">2016 – 2017</div>
+      </div>
+      <div class="job-sub">Ericsson Hungary</div>
+      <div class="job-desc">C programmer. Crypto trading & first blockchain projects in parallel (2017).</div>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <div class="job-title">DiabTrend — <b>Co-founder & Algorithm Dev</b></div>
+        <div class="job-date">2015 – 2016</div>
+      </div>
+      <div class="job-sub">StartUP</div>
+      <div class="job-desc">RNN neural networks, supervised learning. AlexNet CNN for traffic-sign recognition. Built a C++/OpenCL→CUDA ML engine.</div>
+    </div>
+
+    <div class="main-head"><span class="ic">★</span> How I Work</div>
+    <p class="principle">
+      <b>Language-agnostic</b>, right-tool-per-problem. Systems kept <b>lean &amp; bare-metal</b> (no VM/container
+      wrapping). <b>AI full-automation</b> as the default — and I teach engineers to run real work end-to-end with AI.
+    </p>
+    <div class="stack">
+      <span class="chip key">AI full-automation</span>
+      <span class="chip key">Agentic workflows</span>
+      <span class="chip">Python</span>
+      <span class="chip">Julia</span>
+      <span class="chip">C++ / CUDA / OpenCL</span>
+      <span class="chip">JS / React Native</span>
+      <span class="chip">Deep Learning</span>
+      <span class="chip">Linux / bare-metal</span>
+      <span class="chip">HPC &amp; GPU</span>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
