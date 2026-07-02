@@ -6,7 +6,7 @@
 - **Nationality:** Hungarian
 
 ## Contact
-- 1082, Budapest, Vajdahunyad street 56.
+- 1117, Budapest, Budafoki út 64.
 - +36-30-859-3093
 - havliktomi@hotmail.com
 - [linkedin.com/in/tamás-havlik](https://hu.linkedin.com/in/tam%C3%A1s-havlik-56788b105)
