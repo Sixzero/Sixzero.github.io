@@ -17,6 +17,11 @@ wrapping), and teach engineers how to run real work end-to-end with AI agents.
 
 **Languages & tools:** Python · Julia · C++ / CUDA / OpenCL · JS / React Native · Node
 
+## Projects
+- **[todoforai/edge](https://github.com/todoforai/edge)** ⭐63 · *TypeScript* — Edge agent for TODOforAI: shell, file ops, DOCX/XLSX, binary-tool-first focus.
+- **[JarvisTry](https://github.com/Sixzero/JarvisTry)** ⭐6 · *Python* — Voice assistant: Whisper → LLM + RAG → TTS, over a phone microphone.
+- **[EasyContext.jl](https://github.com/Sixzero/EasyContext.jl)** ⭐5 · *Julia* — Easy context creation for LLM prompts.
+
 ## Selected recognition
 - 🥇 Ericsson C++ Programming Challenge — **1st** (Hungary, 2014)
 - 🏅 Numer.ai International ML competition (DNN) — **8th / 10th** (2016)

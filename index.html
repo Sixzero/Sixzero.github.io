@@ -78,7 +78,7 @@
   .dashed{border:0;border-top:1px dashed #5a5a5a;margin:18px 0;}
 
   /* ---------------- MAIN ---------------- */
-  .main{padding:26px 36px 20px;}
+  .main{padding:18px 36px 12px;}
   .name{
     font-size:34px;font-weight:800;color:var(--dark);
     text-transform:uppercase;letter-spacing:1px;line-height:1.1;
@@ -86,13 +86,13 @@
   .name b{color:var(--accent);}
   .role{
     color:var(--muted);text-transform:uppercase;
-    letter-spacing:3px;font-size:13px;margin:5px 0 16px;
+    letter-spacing:3px;font-size:13px;margin:4px 0 9px;
   }
   .main-head{
     display:flex;align-items:center;gap:12px;
     font-size:18px;font-weight:800;color:var(--dark);
     text-transform:uppercase;letter-spacing:1px;
-    margin:9px 0 6px;
+    margin:6px 0 4px;
   }
   .main-head .ic{
     width:30px;height:30px;border-radius:50%;
@@ -100,9 +100,9 @@
     display:flex;align-items:center;justify-content:center;
     font-size:14px;font-weight:700;
   }
-  .about{font-size:12.5px;line-height:1.5;color:var(--text);text-align:justify;}
+  .about{font-size:12px;line-height:1.42;color:var(--text);text-align:justify;}
 
-  .job{position:relative;padding-left:18px;margin-bottom:7px;}
+  .job{position:relative;padding-left:18px;margin-bottom:4px;}
   .job::before{
     content:"";position:absolute;left:0;top:5px;
     width:8px;height:8px;border-radius:50%;background:var(--accent);
@@ -111,20 +111,26 @@
   .job-title{font-size:14px;font-weight:700;color:var(--dark);text-transform:uppercase;}
   .job-title b{color:var(--accent);}
   .job-date{font-size:12px;color:var(--muted);white-space:nowrap;}
-  .job-sub{font-style:italic;font-size:12.5px;color:var(--muted);margin:2px 0 6px;}
+  .job-sub{font-style:italic;font-size:12px;color:var(--muted);margin:1px 0 3px;}
   .job-desc{font-size:12px;line-height:1.45;color:var(--text);}
 
-  .awards{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin:0;}
+  .awards{display:grid;grid-template-columns:1fr 1fr;gap:3px 18px;margin:0;}
   .award{position:relative;padding-left:16px;font-size:11.5px;line-height:1.35;color:var(--text);}
   .award::before{content:"";position:absolute;left:0;top:5px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
   .award strong{display:block;color:var(--dark);font-size:12px;line-height:1.25;}
   .award span{color:var(--muted);}
 
-  .principle{font-size:12px;line-height:1.5;color:var(--text);margin-bottom:7px;}
+  .principle{font-size:12px;line-height:1.42;color:var(--text);margin-bottom:5px;}
   .principle b{color:var(--dark);}
   .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
   .chip{font-size:11px;padding:3px 10px;border-radius:14px;background:#f3f3f3;color:var(--dark);border:1px solid var(--line);white-space:nowrap;}
   .chip.key{background:var(--accent);border-color:var(--accent);color:var(--dark);font-weight:700;}
+
+  .projects{margin-top:4px;}
+  .proj{position:relative;padding-left:16px;font-size:11.5px;line-height:1.35;color:var(--text);margin-bottom:3px;}
+  .proj::before{content:"";position:absolute;left:0;top:5px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  .proj strong{color:var(--dark);}
+  .proj .star{color:var(--accent);font-weight:700;}
 
   @page{size:A4;margin:0;}
   html,body{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -204,11 +210,9 @@
       <div class="award"><strong>Numer.ai International ML — 8th</strong><span>DNN competition, 2016 Feb.</span></div>
       <div class="award"><strong>Numer.ai International ML — 10th</strong><span>DNN competition, 2016 Jan.</span></div>
       <div class="award"><strong>“From Idea to Business” — winner</strong><span>DiabTrend, 2015</span></div>
-      <div class="award"><strong>BME Mathematics — II. award</strong><span>5th overall, 2015</span></div>
       <div class="award"><strong>Hajós György Math — 1st team</strong><span>8th individual, 2013</span></div>
       <div class="award"><strong>National OKTV finals</strong><span>Physics 12th/19th; Informatics 14th/28th</span></div>
       <div class="award"><strong>Izsák Imre Science — 1st &amp; 3rd</strong><span>2011 / 2010</span></div>
-      <div class="award"><strong>BME TDK &amp; Physics awards</strong><span>Honorable mention; II. award</span></div>
     </div>
 
     <div class="main-head"><span class="ic">≡</span> Job Experience</div>
@@ -264,6 +268,13 @@
       <span class="chip">Deep Learning</span>
       <span class="chip">Linux / bare-metal</span>
       <span class="chip">HPC &amp; GPU</span>
+    </div>
+
+    <div class="main-head"><span class="ic">⌥</span> Open-Source Projects</div>
+    <div class="projects">
+      <div class="proj"><strong>todoforai/edge</strong> <span class="star">★63</span> — Edge agent for TODOforAI: shell, file ops, DOCX/XLSX, binary-tool-first.</div>
+      <div class="proj"><strong>JarvisTry</strong> <span class="star">★6</span> — Voice assistant: Whisper → LLM + RAG → TTS over a phone mic.</div>
+      <div class="proj"><strong>EasyContext.jl</strong> <span class="star">★5</span> — Easy context creation for LLM prompts.</div>
     </div>
   </main>
 
